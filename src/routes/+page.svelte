@@ -60,11 +60,11 @@
 		<div class="grid md:grid-cols-2 gap-20">
 			<div>
 				<h3 class="font-semibold text-lg mb-2">Locateur</h3>
-				<p class="text-gray-400">En tant que locateur tu peux mettre à disposition tous les tommes que tu as pour que d'autres personnes prochent de toi puissent en profiter aussi.</p>
+				<p class="text-gray-400">En tant que locateur tu peux mettre à disposition tous les tomes que tu as pour que d'autres personnes prochent de toi puissent en profiter aussi.</p>
 			</div>
 			<div>
 				<h3 class="font-semibold text-lg mb-2">Locataire</h3>
-				<p class="text-gray-400">En tant que locataire tu peux voir tous les tommes mis à disposition par les personnes autour de toi pour profiter pleinement de tout ce que tu veux!</p>
+				<p class="text-gray-400">En tant que locataire tu peux voir tous les tomes mis à disposition par les personnes autour de toi pour profiter pleinement de tout ce que tu veux!</p>
 			</div>
 		</div>
 	</div>
@@ -84,7 +84,7 @@
 		<div class="bg-gray-100 p-4 flex justify-center">
 			<div class="flex items-center gap-3">
 				<div class="font-semibold text-sm">{series.author}</div>
-				<div class="text-xs text-gray-500">{series.books} tommes</div>
+				<div class="text-xs text-gray-500">{series.books} tomes</div>
         	</div>
 		</div>
       </div>
