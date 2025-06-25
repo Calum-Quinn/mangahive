@@ -21,7 +21,9 @@
 		flex: 1;
 		display: flex;
 		flex-direction: column;
-		padding: 1rem;
+		padding-left: 1rem;
+		padding-right: 1rem;
+		padding-bottom: 1rem;
 		width: 100%;
 		max-width: 64rem;
 		margin: 0 auto;

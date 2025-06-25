@@ -3,9 +3,39 @@
 </script>
 
 <!-- Navigation -->
-<nav class="bg-gray-900">
+<!-- <nav class="w-full bg-gray-900">
   <div class="max-w-7xl mx-auto flex justify-between items-center px-5 py-4">
-    <a href="/" class="text-xl font-bold text-gray-400">Manga Hive</a>
+    <a href="/" class="text-3xl font-bold text-gray-400">Manga Hive</a>
+    <ul class="hidden md:flex gap-6 text-gray-600">
+      <li><a href="/" class="hover:underline">Home</a></li>
+      <li><a href="/about" class="hover:underline">About</a></li>
+      <li><a href="/contact" class="hover:underline">Contact</a></li>
+      <li><a href="/faq" class="hover:underline">FAQ</a></li>
+    </ul>
+  </div>
+</nav> -->
+
+<!-- Header -->
+<!-- <header class="w-full bg-gray-900 text-white py-12">
+  <div class="max-w-7xl mx-auto flex flex-col xl:flex-row items-center px-5">
+    <div class="xl:w-1/2 text-center xl:text-left">
+      <h1 class="text-4xl font-bold mb-4">Le centre de partage pour tous vos mangas</h1>
+      <p class="text-white/70 mb-6">Depuis ici il est facile et rapide de soit mettre en location vos mangas soit parcourir ceux mis à disposition par d'autres!</p>
+      <div class="flex justify-center xl:justify-start gap-4">
+        <a class="btn btn-primary bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded" href="/start">Démarrer</a>
+        <a class="btn btn-outline text-white border border-white py-2 px-4 rounded" href="#features">Plus d'infos</a>
+      </div>
+    </div>
+    <div class="xl:w-1/2 mt-10 xl:mt-0 text-center">
+      <img class="rounded-lg" src="https://dummyimage.com/600x400/343a40/6c757d" alt="..." />
+    </div>
+  </div>
+</header> -->
+
+<!-- Navigation -->
+<nav class="absolute left-0 right-0 w-screen bg-gray-900">
+  <div class="max-w-7xl mx-auto flex justify-between items-center px-5 py-4">
+    <a href="/" class="text-3xl font-bold text-gray-400">Manga Hive</a>
     <ul class="hidden md:flex gap-6 text-gray-600">
       <li><a href="/" class="hover:underline">Home</a></li>
       <li><a href="/about" class="hover:underline">About</a></li>
@@ -16,7 +46,7 @@
 </nav>
 
 <!-- Header -->
-<header class="bg-gray-900 text-white py-12">
+<header class="absolute left-0 right-0 w-screen bg-gray-900 text-white py-12 mt-16">
   <div class="max-w-7xl mx-auto flex flex-col xl:flex-row items-center px-5">
     <div class="xl:w-1/2 text-center xl:text-left">
       <h1 class="text-4xl font-bold mb-4">Le centre de partage pour tous vos mangas</h1>
@@ -31,6 +61,8 @@
     </div>
   </div>
 </header>
+
+
 
 <!-- Features Section -->
 <section class="py-12" id="features">
