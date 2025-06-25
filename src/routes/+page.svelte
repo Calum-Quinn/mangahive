@@ -1,5 +1,5 @@
 <script>
-  
+  import { base } from '$app/paths';
 </script>
 
 <!-- Navigation -->
@@ -35,12 +35,12 @@
 <!-- Navigation -->
 <nav class="absolute left-0 right-0 w-screen bg-gray-900">
   <div class="max-w-7xl mx-auto flex justify-between items-center px-5 py-4">
-    <a href="/" class="text-3xl font-bold text-gray-400">Manga Hive</a>
+    <a href="{base}/" class="text-3xl font-bold text-gray-400">Manga Hive</a>
     <ul class="hidden md:flex gap-6 text-gray-600">
-      <li><a href="/" class="hover:underline">Home</a></li>
-      <li><a href="/about" class="hover:underline">About</a></li>
-      <li><a href="/contact" class="hover:underline">Contact</a></li>
-      <li><a href="/faq" class="hover:underline">FAQ</a></li>
+      <li><a href="{base}/" class="hover:underline">Home</a></li>
+      <li><a href="{base}/about" class="hover:underline">About</a></li>
+      <li><a href="{base}/contact" class="hover:underline">Contact</a></li>
+      <li><a href="{base}/faq" class="hover:underline">FAQ</a></li>
     </ul>
   </div>
 </nav>
@@ -52,7 +52,7 @@
       <h1 class="text-4xl font-bold mb-4">Le centre de partage pour tous vos mangas</h1>
       <p class="text-white/70 mb-6">Depuis ici il est facile et rapide de soit mettre en location vos mangas soit parcourir ceux mis à disposition par d'autres!</p>
       <div class="flex justify-center xl:justify-start gap-4">
-        <a class="btn btn-primary bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded" href="/start">Démarrer</a>
+        <a class="btn btn-primary bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded" href="{base}/start">Démarrer</a>
         <a class="btn btn-outline text-white border border-white py-2 px-4 rounded" href="#features">Plus d'infos</a>
       </div>
     </div>
@@ -93,7 +93,7 @@
       "Working with Start Bootstrap templates has saved me tons of development time when building new projects!"
     </blockquote>
     <div class="flex justify-center items-center gap-4">
-      <img class="rounded-full w-10 h-10" src="https://dummyimage.com/40x40/ced4da/6c757d" alt="Something random"/>
+      <img class="rounded-full w-10 h-10" src="https://dummyimage.com/40x40/ced4da/6c757d" alt="Something random" />
       <div>
         <strong>Tom Ato</strong>
         <div class="text-sm text-gray-500">CEO, Pomodoro</div>
