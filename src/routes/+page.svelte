@@ -44,7 +44,7 @@
       <p class="text-white/70 mb-6">Depuis ici il est facile et rapide de soit mettre en location vos mangas soit parcourir ceux mis à disposition par d'autres!</p>
       <div class="flex justify-center xl:justify-start gap-4">
         <a class="btn btn-primary bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded" href="{base}/start">Démarrer</a>
-        <a class="btn btn-outline text-white border border-white py-2 px-4 rounded" href="#features">Plus d'infos</a>
+        <a class="btn btn-outline text-white border border-white py-2 px-4 rounded" href="#info">Plus d'infos</a>
       </div>
     </div>
     <div class="xl:w-1/2 mt-10 xl:mt-0 text-center">
@@ -54,7 +54,7 @@
 </header>
 
 <!-- Information -->
-<section class="pt-12 pb-8">
+<section class="pt-12 pb-8" id="info">
 	<div class="max-w-7xl mx-auto px-10 text-center">
 		<h2 class="text-3xl font-bold mb-5">Principe</h2>
 		<div class="grid md:grid-cols-2 gap-20">
@@ -70,14 +70,14 @@
 	</div>
 </section>
 
-<!-- Blog Preview -->
+<!-- Top Picks Preview -->
 <section class="py-12">
   <div class="max-w-7xl mx-auto px-10 text-center">
     <h2 class="text-3xl font-bold mb-10">Les séries les plus appréciées</h2>
     <div class="grid md:grid-cols-3 gap-8">
       {#each topMangaSeries as series}
       <div class="bg-white shadow rounded overflow-hidden">
-        <img src="{series.image}" alt="Series" class="w-full h-48 object-cover" />
+        <img src="{base}{series.image}" alt="Series" class="w-full h-48 object-cover" />
         <div class="p-2">
           <h3 class="font-semibold text-lg mb-2">{series.title}</h3>
         </div>

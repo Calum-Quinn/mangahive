@@ -12,7 +12,7 @@ const config = {
 			assets: 'build'
 		}),
 		paths: {
-			base: dev ? '' : '/mangahive',
+			base: '/mangahive'
 		},
 		prerender: {
 			handleHttpError: 'warn'
