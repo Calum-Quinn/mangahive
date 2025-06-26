@@ -43,7 +43,7 @@
       <h1 class="text-4xl font-bold mb-4">Le centre de partage pour tous vos mangas</h1>
       <p class="text-white/70 mb-6">Depuis ici il est facile et rapide de soit mettre en location vos mangas soit parcourir ceux mis à disposition par d'autres!</p>
       <div class="flex justify-center xl:justify-start gap-4">
-        <a class="btn btn-primary bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded" href="{base}/start">Démarrer</a>
+        <a class="btn btn-primary bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded" href="{base}/signup">Démarrer</a>
         <a class="btn btn-outline text-white border border-white py-2 px-4 rounded" href="#info">Plus d'infos</a>
       </div>
     </div>

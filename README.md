@@ -27,3 +27,20 @@ npm run build
 ```bash
 npm run deploy
 ```
+
+## Used technologies
+
+### SvelteKit
+
+
+### TailwindCSS
+To easily add style to the webpages.
+
+### PostgreSQL
+To define the application database.
+
+### node-postgres
+To link the DB.
+
+### GithHub Pages
+To host a static version of the webpage.

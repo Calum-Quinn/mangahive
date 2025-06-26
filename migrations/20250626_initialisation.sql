@@ -1,0 +1,18 @@
+DROP TABLE IF EXISTS mangas;
+DROP TABLE IF EXISTS users;
+
+CREATE TABLE users (
+    id SERIAL PRIMARY KEY,
+    firstname TEXT NOT NULL,
+    surname TEXT NOT NULL,
+    username TEXT NOT NULL UNIQUE,
+    password TEXT NOT NULL, --Hash?
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE mangas (
+    id SERIAL PRIMARY KEY,
+    user_id INTEGER REFERENCES users(id),
+    content TEXT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
