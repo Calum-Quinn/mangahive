@@ -10,8 +10,6 @@ export const actions = {
         const username = formData.get('username')?.toString();
         const password = formData.get('password')?.toString();
 
-        console.log('DB object: ', db);
-
         if (!firstname || !surname || !username || !password) {
             return fail(400, { error: 'Tous les champs sont nécessaires.'});
         }
