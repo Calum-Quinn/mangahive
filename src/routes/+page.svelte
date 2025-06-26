@@ -79,10 +79,3 @@
     </div>
   </div>
 </section>
-
-<!-- Call to Action -->
-<aside class="bg-blue-600 text-white py-7 text-center mt-12">
-  <div class="max-w-3xl mx-auto px-10">
-    <p class="text-white/70">Seulement une petite attente avant le reste...</p>
-  </div>
-</aside>
