@@ -13,7 +13,7 @@
 				<div>
 					<a href="{base}/" class="main-title font-bold text-3xl text-gray-400">Manga Hive</a>
 				</div>
-				<ul class="hidden md:flex gap-6 text-gray-600">
+				<ul class="flex gap-6 text-gray-600">
 					<li><a href="{base}/" class="hover:underline">Accueil</a></li>
 					<li><a href="{base}/about" class="hover:underline">A propos</a></li>
 					<li><a href="{base}/contact" class="hover:underline">Contact</a></li>

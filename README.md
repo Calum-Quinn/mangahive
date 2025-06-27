@@ -44,3 +44,6 @@ To link the DB.
 
 ### GithHub Pages
 To host a static version of the webpage.
+
+### bcrypt
+To hash passwords so as to store them securely.

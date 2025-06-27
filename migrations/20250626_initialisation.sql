@@ -1,3 +1,4 @@
+DROP TABLE IF EXISTS sessions;
 DROP TABLE IF EXISTS mangas;
 DROP TABLE IF EXISTS users;
 
@@ -15,4 +16,10 @@ CREATE TABLE mangas (
     user_id INTEGER REFERENCES users(id),
     content TEXT NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE sessions (
+    id TEXT PRIMARY KEY,
+    username TEXT NOT NULL,
+    expires_at TIMESTAMP NOT NULL
 );
