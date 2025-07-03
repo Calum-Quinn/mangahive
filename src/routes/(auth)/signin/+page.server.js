@@ -38,8 +38,8 @@ export const actions = {
             cookies.set('session_id', sessionId, {
                 path: '/',
                 httpOnly: true,
-                sameSite: 'strict',
-                secure: false,
+                sameSite: 'lax',
+                secure: false, // Set to true in production
                 maxAge: 60 * 60 // 1 hour
             });
         } catch (err) {

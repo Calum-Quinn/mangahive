@@ -2,7 +2,7 @@
 	import '../app.css';
 	import { base } from '$app/paths';
 
-	let { children } = $props();
+	let { children, user } = $props();
 </script>
 
 <div class="app min-h-screen flex flex-col">
@@ -18,6 +18,14 @@
 					<li><a href="{base}/about" class="hover:underline">A propos</a></li>
 					<li><a href="{base}/contact" class="hover:underline">Contact</a></li>
 					<li><a href="{base}/faq" class="hover:underline">FAQ</a></li>
+
+					<!-- Check if user is logged in to show connexion button -->
+					{#if user}
+						<li><a href="{base}/user" class="hover:underline">Profil</a></li>
+						<li><a href="{base}/logout" class="hover:underline">Déconnexion</a></li>
+					{:else}
+						<li><a href="{base}/signin" class="hover:underline">Connexion</a></li>
+					{/if}
 				</ul>
 			</div>
 		</nav>
