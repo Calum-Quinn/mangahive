@@ -1,9 +1,10 @@
 import { fail, redirect } from '@sveltejs/kit';
 import db, { getUserByUsername } from '$lib/server/db';
 import bcrypt from 'bcrypt';
+import crypto from 'crypto';
 
 export const actions = {
-    default: async ({ request }) => {
+    default: async ({ request, cookies }) => {
         const formData = await request.formData();
         const username = formData.get('username')?.toString();
         const password = formData.get('password')?.toString();
@@ -15,20 +16,14 @@ export const actions = {
         const user = await getUserByUsername(username);
 
         if (!user) {
-            console.log('Aucun utilisateur trouvé avec ce nom.')
-        } else {
-            // Verify password
-            bcrypt.compare(password, user.password, (err, result) => {
-                if (err) {
-                    console.error('Erreur de comparaison de mdp: ', err);
-                    return fail(500, { error: 'Erreur interne du serveur' });
-                }
+            return fail(404, { error: 'Nom d\'utilisateur faux' });
+        }
 
-                if (!result) {
-                    // Password does not match
-                    return fail(401, { error: 'Mot de passe incorrect' });
-                }
-            });
+        // Verify password
+        const passwordMatch = await bcrypt.compare(password, user.password);
+
+        if (!passwordMatch) {
+            return fail(401, { error: 'Mot de passe incorrect' });
         }
 
         const sessionId = crypto.randomUUID();
@@ -39,14 +34,19 @@ export const actions = {
                 'INSERT INTO sessions (id, username, expires_at) VALUES ($1,$2,$3)',
                 [sessionId, username, expiresAt]
             );
+
+            cookies.set('session_id', sessionId, {
+                path: '/',
+                httpOnly: true,
+                sameSite: 'strict',
+                secure: false,
+                maxAge: 60 * 60 // 1 hour
+            });
         } catch (err) {
             console.error('DB error: ', err);
             return fail(500, { error: 'Database error' });
         }
 
-        return { 
-            success: true,
-            message: 'Connexion réussie !',
-        };
+        throw redirect(302, '/'); // Redirect to home page after successful login
     }
 };
