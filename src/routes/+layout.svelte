@@ -1,8 +1,11 @@
 <script>
 	import '../app.css';
 	import { base } from '$app/paths';
+	import { getFlash } from 'sveltekit-flash-message';
+	import { page } from '$app/stores';
 
 	let { children, data } = $props();
+	const flash = getFlash(page);
 </script>
 
 <div class="app min-h-screen flex flex-col">
@@ -30,6 +33,13 @@
 				</ul>
 			</div>
 		</nav>
+
+		<!-- Flash Messages -->
+		{#if $flash}
+			<div class="p-4 bg-green-500">
+				{$flash.message}
+			</div>
+		{/if}
 
 		<!-- Content -->
 		{@render children()}

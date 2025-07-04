@@ -1,9 +1,10 @@
-import { fail, redirect } from '@sveltejs/kit';
+import { error, fail } from '@sveltejs/kit';
+import { redirect, setFlash } from 'sveltekit-flash-message/server';
 import db from '$lib/server/db';
 import bcrypt from 'bcrypt';
 
 export const actions = {
-    default: async ({ request }) => {
+    default: async ({ request, cookies }) => {
         const formData = await request.formData();
         const firstname = formData.get('firstname')?.toString();
         const surname = formData.get('surname')?.toString();
@@ -11,7 +12,8 @@ export const actions = {
         const password = formData.get('password')?.toString();
 
         if (!firstname || !surname || !username || !password) {
-            return fail(400, { error: 'Tous les champs sont nécessaires.'});
+            setFlash({ type: 'error', message: 'Tous les champs sont nécessaires.' }, cookies);
+            return fail(400);
         }
 
         try {
@@ -22,12 +24,10 @@ export const actions = {
             );
         } catch (err) {
             console.error('DB error: ', err);
-            return fail(500, { error: 'Database error' });
+            setFlash({ type: 'error', message: 'Erreur de base de données.'}, cookies);
+            return fail(500);
         }
 
-        return { 
-            success: true,
-            message: 'Compte créé'
-        };
+        redirect('/signin', { type: 'success', message: 'Inscription réussie! Vous pouvez maintenant vous connecter.' }, cookies);
     }
 };
