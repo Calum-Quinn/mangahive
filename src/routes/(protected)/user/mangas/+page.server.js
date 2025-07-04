@@ -16,7 +16,7 @@ export async function load({ cookies }) {
 
     if (user) {
         return {
-            mangas: await getUserMangas(user.id)
+            user_mangas: await getUserMangas(user.id)
         };
     }
 
