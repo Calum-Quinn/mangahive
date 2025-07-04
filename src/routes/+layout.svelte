@@ -9,7 +9,7 @@
 </script>
 
 <div class="app min-h-screen flex flex-col">
-	<main class="flex-1 flex flex-col">
+	<main class="flex-1 flex flex-col bg-[--color-bg-2]">
 		<!-- Navigation -->
 		<nav class="w-full bg-gray-900">
 			<div class="max-w-7xl mx-auto flex justify-between items-center px-10 py-4">

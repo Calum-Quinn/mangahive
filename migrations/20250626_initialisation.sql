@@ -14,7 +14,10 @@ CREATE TABLE users (
 CREATE TABLE mangas (
     id SERIAL PRIMARY KEY,
     user_id INTEGER REFERENCES users(id),
-    content TEXT NOT NULL,
+    title TEXT NOT NULL,
+    author TEXT NOT NULL,
+    year INTEGER CHECK (year > 0),
+    image_url TEXT,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 

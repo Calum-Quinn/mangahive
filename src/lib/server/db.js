@@ -25,4 +25,17 @@ export async function getUserBySessionId(sessionId) {
     return null;
 }
 
+export async function getUserMangas(userId) {
+    const res = await db.query('SELECT * FROM mangas WHERE user_id = $1', [userId]);
+    return res.rows;
+}
+
+export async function addManga({ userId, title, author, year, imageUrl }) {
+  await db.query(
+    `INSERT INTO mangas (user_id, title, author, year, image_url) VALUES ($1, $2, $3, $4, $5)`,
+    [userId, title, author, year, imageUrl]
+  );
+}
+
+
 export default db;
