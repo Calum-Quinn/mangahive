@@ -1,5 +1,5 @@
 <script>
-	export let user;
+	let { data } = $props();
 </script>
 
-<p>{JSON.stringify(user)}</p>
+<h1 class="text-2xl font-bold mb-4">Bonjour {data.user.username}!</h1>

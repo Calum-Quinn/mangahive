@@ -2,7 +2,7 @@
 	import '../app.css';
 	import { base } from '$app/paths';
 
-	let { children, user } = $props();
+	let { children, data } = $props();
 </script>
 
 <div class="app min-h-screen flex flex-col">
@@ -20,9 +20,10 @@
 					<li><a href="{base}/faq" class="hover:underline">FAQ</a></li>
 
 					<!-- Check if user is logged in to show connexion button -->
-					{#if user}
+					{#if data.user}
 						<li><a href="{base}/user" class="hover:underline">Profil</a></li>
-						<li><a href="{base}/logout" class="hover:underline">Déconnexion</a></li>
+						<!-- data-sveltekit-preload-data avoids loading the page on hover (otherwise disconnects) -->
+						<li><a href="{base}/logout" class="hover:underline" data-sveltekit-preload-data="off">Déconnexion</a></li>
 					{:else}
 						<li><a href="{base}/signin" class="hover:underline">Connexion</a></li>
 					{/if}

@@ -35,7 +35,7 @@ export const actions = {
                 [sessionId, username, expiresAt]
             );
 
-            cookies.set('session_id', sessionId, {
+            cookies.set('session', sessionId, {
                 path: '/',
                 httpOnly: true,
                 sameSite: 'lax',

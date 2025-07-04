@@ -1,4 +1,3 @@
-export async function load({ parent }) {
-  const { user } = await parent();
-  return { user };
+export async function load({ locals }) {
+  return { user: locals.user };
 }
