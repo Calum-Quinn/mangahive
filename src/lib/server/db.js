@@ -25,12 +25,31 @@ export async function getUserBySessionId(sessionId) {
     return null;
 }
 
+export async function getMangas() {
+    const res = await db.query('SELECT * FROM manga_series ORDER BY title');
+    return res.rows;
+}
+
 export async function getUserMangas(userId) {
     const res = await db.query('SELECT * FROM user_mangas WHERE user_id = $1', [userId]);
     return res.rows;
 }
 
-export async function addManga({ userId, title, author, year, imageUrl }) {
+export async function addManga({ title, author, description, year, imageUrl }) {
+    await db.query(
+        `INSERT INTO manga_series (title, author, description, year, image_url) VALUES ($1, $2, $3, $4, $5)`,
+        [title, author, description, year, imageUrl]
+    );
+}
+
+export async function addVolume({ mangaId, volumeNumber, releaseDate, imageUrl }) {
+    await db.query(
+        `INSERT INTO manga_volumes (series_id, volume_number, release_date, image_url) VALUES ($1, $2, $3, $4)`,
+        [mangaId, volumeNumber, releaseDate, imageUrl]
+    );
+}
+
+export async function addUserManga({ userId, title, author, year, imageUrl }) {
   await db.query(
     `INSERT INTO user_mangas (user_id, title, author, year, user_image_url) VALUES ($1, $2, $3, $4, $5)`,
     [userId, title, author, year, imageUrl]

@@ -9,12 +9,19 @@
 				Bonjour {data.user.username}!
 			</h1>
 
-			<a
-				href="/user/mangas"
-				class="inline-block text-blue-600 hover:underline text-lg font-medium"
-			>
-				Vos mangas
-			</a>
+			<div>
+				<a href="/user/mangas" class="inline-block text-blue-600 hover:underline text-lg font-medium">
+					Vos mangas
+				</a>
+			</div>
+
+			<div>
+				{#if data.user.admin}
+					<a href="/new_admin" class="mt-4 inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+						Ajouter un manga
+					</a>
+				{/if}
+			</div>
 		</div>
 	</div>
 </section>
